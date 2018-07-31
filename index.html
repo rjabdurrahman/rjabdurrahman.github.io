@@ -31,6 +31,50 @@
         width: 13px;
         padding: 0
     }
+
+    .product-container {
+        padding-bottom: 70px;
+        display: flex;
+        margin-top: 15px
+    }
+
+    .product-container .product {
+        height: 280px;
+        width: 150px;
+        margin-left: 15px;
+        background-image: url(spray.jpg);
+        position: relative;
+    }
+
+    .product-container .p-footer {
+        background-color: rgba(255, 255, 255, 0.8);
+        position: absolute;
+        bottom: 0;
+    }
+
+    .product-container .product .p-footer .p-name {
+        padding: 4px 10px 4px 10px;
+        font-size: 18px;
+    }
+
+    .product-container .product img {
+        height: 200px;
+        width: 130px;
+    }
+
+    .product-container .product .p-price {
+        font-size: 18px;
+        background-color: aqua;
+        color: black;
+        padding: 8px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .product-container .product button {
+        font-size: 14px;
+    }
 </style>
 
 <body>
@@ -38,7 +82,7 @@
         <a href="#" class="w3-bar-item w3-button">
             <i class="fa fa-align-justify" style="font-size:24px"></i>
         </a>
-        <input type="text" class="w3-bar-item w3-input w3-white" placeholder="Search..">
+        <input type="text" class="w3-bar-item w3-input w3-white" style="width: 100%;overflow: hidden;" placeholder="Search..">
         <a href="#" class="w3-bar-item w3-button">
             <i class="fa fa-search" style="font-size:24px"></i>
         </a>
@@ -55,31 +99,21 @@
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
     </div>
-    <div class="w3-container" style="padding-bottom: 70px;display: flex;">
-        <div class="w3-card" style="width:45%;margin:4px;">
-            <div class="w3-container">
-                <img src="spray.jpg" alt="Avatar" style="width:60px">
-                <header class="w3-container w3-light-grey">
-                    <h3>John Doe</h3>
-                </header>
+    <div class="product-container">
+        <div class="w3-border product">
+            <span class="p-price">৳৪৫</span>
+            <div class="p-footer">
+                <div class="p-name w3-border-top">Addidas Body Spray</div>
+                <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
             </div>
-            <button class="w3-button w3-block w3-dark-grey">Buy</button>
-        </div>
-        <div class="w3-card" style="width:45%">
-            <div class="w3-container">
-                <img src="cream.jpg" alt="Avatar" style="width:60px">
-                <header class="w3-container w3-light-grey">
-                    <h3>John Doe</h3>
-                </header>
-            </div>
-            <button class="w3-button w3-block w3-dark-grey">Buy</button>
         </div>
     </div>
     <div class="w3-bar w3-light-grey w3-border bottom-fix" style="display: flex;">
         <a href="#" class="w3-bar-item w3-button">
             <i class="fa fa-comment" style="font-size:30px"></i>
         </a>
-        <a href="#" class="w3-bar-item w3-button" style="position: absolute;right:0px">
+        <button class="w3-button w3-block w3-border" style="margin-right: 60px;font-size: 18px">Place Order</button>
+        <a href="#" class="w3-bar-item w3-button" style="position: absolute;right:0px;">
             <i class="fa fa-cart-plus" style="font-size:30px"></i>
         </a>
     </div>
