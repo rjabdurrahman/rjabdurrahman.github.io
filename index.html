@@ -82,11 +82,20 @@
     .product-container .product button {
         font-size: 14px;
     }
+    .cat-nav {
+        position: absolute;
+        z-index: 100;
+        left: -600px;
+    }
+    .cat-nav-show{
+        left: 0;
+        transition: 0.3s;
+    }
 </style>
 
 <body>
     <div class="w3-bar w3-light-grey w3-border" style="display: flex">
-        <a href="#" class="w3-bar-item w3-button">
+        <a id="catBtn" class="w3-bar-item w3-button">
             <i class="fa fa-align-justify" style="font-size:24px"></i>
         </a>
         <input type="text" class="w3-bar-item w3-input w3-white" style="width: 100%;overflow: hidden;" placeholder="Search..">
@@ -94,6 +103,12 @@
             <i class="fa fa-search" style="font-size:24px"></i>
         </a>
     </div>
+    <ul id="catUl" class="w3-ul w3-border w3-white cat-nav">
+        <li><i class="fa fa-plus" style="font-size:14px"></i> CATEGORIES</li>
+        <li>Fashion</li>
+        <li>Electronics</li>
+        <li>Mobile</li>
+    </ul>
     <div class="w3-content w3-display-container" style="max-width:800px;position: relative;">
         <img class="mySlides" src="img_nature_wide.jpg" style="width:100%">
         <img class="mySlides" src="img_snow_wide.jpg" style="width:100%">
@@ -145,7 +160,7 @@
         function plusDivs(n) {
             showDivs(slideIndex += n);
         }
-        setInterval(function(){ showDivs(++slideIndex) }, 3000);
+        setInterval(function () { showDivs(++slideIndex) }, 3000);
         function currentDiv(n) {
             showDivs(slideIndex = n);
         }
@@ -165,6 +180,13 @@
             x[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " w3-white";
         }
+        //Category Navigation
+        function $js(id){
+            return document.getElementById(id);
+        }
+        $js("catBtn").addEventListener('click', function(){
+            $js("catUl").classList.add("class", "cat-nav-show");
+        });
     </script>
 
 </body>
