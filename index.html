@@ -84,9 +84,10 @@
     }
 
     .cat-nav {
+        width: 200px;
         position: absolute;
         z-index: 100;
-        left: -600px;
+        left: -202px;
     }
 
     .cat-nav-show {
@@ -94,7 +95,8 @@
         transition: 0.3s;
     }
 
-    ul.w3-ul li ul, ul.w3-ul li:hover ul {
+    ul.w3-ul li ul,
+    ul.w3-ul li:hover ul {
         display: none;
     }
 
@@ -104,6 +106,12 @@
 </style>
 
 <body>
+    <div class="w3-bar w3-light-grey" style="display: flex;padding-top:5px;">
+        <a class="w3-bar-item w3-button">
+            <i class="fa fa-gift" style="font-size:26px"></i>
+        </a>
+        <span style="font-size: 25px;vertical-align: middle;">OnCurt</span>
+    </div>
     <div class="w3-bar w3-light-grey w3-border" style="display: flex">
         <a id="catBtn" class="w3-bar-item w3-button">
             <i class="fa fa-align-justify" style="font-size:24px"></i>
@@ -126,8 +134,10 @@
                 <li>Ghona</li>
             </ul>
         </li>
-        <li>Electronics</li>
-        <li>Mobile</li>
+        <li>
+            <i class="fa fa-plus" style="font-size:14px"></i> Electronics</li>
+        <li>
+            <i class="fa fa-plus" style="font-size:14px"></i> Mobile</li>
     </ul>
     <div class="w3-content w3-display-container" style="max-width:800px;position: relative;">
         <img class="mySlides" src="img_nature_wide.jpg" style="width:100%">
