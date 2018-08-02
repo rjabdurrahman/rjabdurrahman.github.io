@@ -82,14 +82,24 @@
     .product-container .product button {
         font-size: 14px;
     }
+
     .cat-nav {
         position: absolute;
         z-index: 100;
         left: -600px;
     }
-    .cat-nav-show{
+
+    .cat-nav-show {
         left: 0;
         transition: 0.3s;
+    }
+
+    ul.w3-ul li ul, ul.w3-ul li:hover ul {
+        display: none;
+    }
+
+    ul.w3-ul li:hover ul {
+        display: block;
     }
 </style>
 
@@ -104,8 +114,18 @@
         </a>
     </div>
     <ul id="catUl" class="w3-ul w3-border w3-white cat-nav">
-        <li><i class="fa fa-plus" style="font-size:14px"></i> CATEGORIES</li>
-        <li>Fashion</li>
+        <li>
+            <i class="fa fa-minus" style="font-size:14px"></i> CATEGORIES
+        </li>
+        <li>
+            <a>
+                <i class="fa fa-plus" style="font-size:14px"></i> Wemen Fashion</a>
+            <ul class="w3-ul">
+                <li>Payel</li>
+                <li>Churi</li>
+                <li>Ghona</li>
+            </ul>
+        </li>
         <li>Electronics</li>
         <li>Mobile</li>
     </ul>
@@ -181,11 +201,17 @@
             dots[slideIndex - 1].className += " w3-white";
         }
         //Category Navigation
-        function $js(id){
+        function $js(id) {
             return document.getElementById(id);
         }
-        $js("catBtn").addEventListener('click', function(){
-            $js("catUl").classList.add("class", "cat-nav-show");
+        $js("catBtn").addEventListener('click', function () {
+            var cList = $js("catUl").className.split(' ');
+            if (cList.indexOf("cat-nav-show") == -1) {
+                $js("catUl").classList.add("class", "cat-nav-show");
+            }
+            else {
+                $js("catUl").classList.remove("class", "cat-nav-show");
+            }
         });
     </script>
 
