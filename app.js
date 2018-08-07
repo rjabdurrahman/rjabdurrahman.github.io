@@ -16,6 +16,24 @@ app.config(function($routeProvider) {
 });
 app.controller('HomeCntlr', function($scope){
     $scope.cat = 'Main';
+    $scope.products = [
+        {
+            name: "Main 1",
+            price: 45
+        },
+        {
+            name: "Main 2",
+            price: 80
+        },
+        {
+            name: "Main 3",
+            price: 90
+        },
+        {
+            name: "Main 4",
+            price: 20
+        }
+    ];
 });
 app.run(function($rootScope) {
   $rootScope.cat = 'Main';

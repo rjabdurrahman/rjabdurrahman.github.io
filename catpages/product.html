@@ -1,24 +1,12 @@
 <div class="product-container">
-    <div class="w3-border product" style="background-image: url(img/spray.jpg);">
-        <span class="p-price">৳৪৫</span>
+    <div class="w3-container w3-block w3-light-grey" style="margin-bottom: 18px;">
+        <span style="font-size: 25px;vertical-align: middle;">{{cat}}</span>
+    </div>
+    <div ng-repeat="product in products track by $index" class="w3-border product" style="background-image: url(img/spray.jpg);">
+        <span class="p-price">৳{{product.price}}</span>
         <div class="p-footer">
-            <div class="p-name w3-border-top">Adidas Body Spray</div>
+            <div class="p-name w3-border-top">{{product.name}}</div>
             <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
         </div>
     </div>
-    <div class="w3-border product" style="background-image: url(img/cream.jpg);">
-        <span class="p-price">৳১৪৫</span>
-        <div class="p-footer">
-            <div class="p-name w3-border-top">Dove Cream</div>
-            <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
-        </div>
-    </div>
-    <div class="w3-border product" style="background-image: url(img/perfume.jpg);">
-        <span class="p-price">৳৯৫০</span>
-        <div class="p-footer">
-            <div class="p-name w3-border-top">Yacht Man Red Perfume</div>
-            <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
-        </div>
-    </div>
-    <div>{{cat}}</div>
 </div>
