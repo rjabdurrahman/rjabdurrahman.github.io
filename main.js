@@ -1,5 +1,13 @@
+function $js(id) {
+    return document.getElementById(id);
+}
+//Category Navigation
 jQuery(document).ready(function () {
-
+    $(document).ready(function(){
+        $("#catBtn").click(function(){
+            $("#catUl").slideToggle("slow");
+        });
+    });
     var subMenu = jQuery("ul#catUl li ul li");
     var linkClick = jQuery("ul#catUl li").filter(":has(ul)");
 
@@ -9,6 +17,7 @@ jQuery(document).ready(function () {
         $(this).find('ul li').slideToggle("fast, 100");
     });
 });
+//Slider Start
 var slideIndex = 1;
 showDivs(slideIndex);
 
@@ -36,15 +45,12 @@ function showDivs(n) {
     dots[slideIndex - 1].className += " w3-white";
 }
 //Category Navigation
-function $js(id) {
-    return document.getElementById(id);
-}
-$js("catBtn").addEventListener('click', function () {
-    var cList = $js("catUl").className.split(' ');
-    if (cList.indexOf("cat-nav-show") == -1) {
-        $js("catUl").classList.add("class", "cat-nav-show");
-    }
-    else {
-        $js("catUl").classList.remove("class", "cat-nav-show");
-    }
-});
+// $js("catBtn").addEventListener('click', function () {
+//     var cList = $js("catUl").className.split(' ');
+//     if (cList.indexOf("cat-nav-show") == -1) {
+//         $js("catUl").classList.add("class", "cat-nav-show");
+//     }
+//     else {
+//         $js("catUl").classList.remove("class", "cat-nav-show");
+//     }
+// });
