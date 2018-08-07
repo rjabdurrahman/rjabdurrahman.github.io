@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
@@ -9,100 +9,10 @@
     <link rel="stylesheet" href="w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
 </head>
 <style>
-    .bottom-fix {
-        position: fixed;
-        bottom: 0;
-    }
-
-    .mySlides {
-        display: none
-    }
-
-    .w3-left,
-    .w3-right,
-    .w3-badge {
-        cursor: pointer
-    }
-
-    .w3-badge {
-        height: 13px;
-        width: 13px;
-        padding: 0
-    }
-
-    .product-container {
-        padding-bottom: 70px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-top: 15px;
-        justify-content: flex-start;
-    }
-
-    .product-container .product {
-        height: 280px;
-        width: 150px;
-        margin-left: 15px;
-        margin-bottom: 15px;
-        position: relative;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-
-    .product-container .p-footer {
-        background-color: rgba(255, 255, 255, 0.8);
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-
-    .product-container .product .p-footer .p-name {
-        padding: 4px 10px 4px 10px;
-        font-size: 18px;
-    }
-
-    .product-container .product img {
-        height: 200px;
-        width: 130px;
-    }
-
-    .product-container .product .p-price {
-        font-size: 18px;
-        background-color: aqua;
-        color: black;
-        padding: 8px;
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .product-container .product button {
-        font-size: 14px;
-    }
-
-    .cat-nav {
-        width: 200px;
-        position: absolute;
-        z-index: 100;
-        left: -202px;
-    }
-
-    .cat-nav-show {
-        left: 0;
-        transition: 0.3s;
-    }
-
-    ul.w3-ul li ul,
-    ul.w3-ul li:hover ul {
-        display: none;
-    }
-
-    ul.w3-ul li:hover ul {
-        display: block;
-    }
 </style>
 
 <body>
@@ -135,14 +45,17 @@
             </ul>
         </li>
         <li>
-            <i class="fa fa-plus" style="font-size:14px"></i> Electronics</li>
+            <a href="#electronics">
+            <i class="fa fa-plus" style="font-size:14px"></i> Electronics
+            </a>
+        </li>
         <li>
             <i class="fa fa-plus" style="font-size:14px"></i> Mobile</li>
     </ul>
     <div class="w3-content w3-display-container" style="max-width:800px;position: relative;">
-        <img class="mySlides" src="img_nature_wide.jpg" style="width:100%">
-        <img class="mySlides" src="img_snow_wide.jpg" style="width:100%">
-        <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
+        <img class="mySlides" src="img/img_nature_wide.jpg" style="width:100%">
+        <img class="mySlides" src="img/img_snow_wide.jpg" style="width:100%">
+        <img class="mySlides" src="img/img_mountains_wide.jpg" style="width:100%">
         <div class="w3-center w3-container w3-section w3-large w3-text-white" style="width:100%;position: absolute;bottom: 0;">
             <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
             <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -151,29 +64,8 @@
             <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
         </div>
     </div>
-    <div class="product-container">
-        <div class="w3-border product" style="background-image: url(spray.jpg);">
-            <span class="p-price">৳৪৫</span>
-            <div class="p-footer">
-                <div class="p-name w3-border-top">Adidas Body Spray</div>
-                <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
-            </div>
-        </div>
-        <div class="w3-border product" style="background-image: url(cream.jpg);">
-            <span class="p-price">৳১৪৫</span>
-            <div class="p-footer">
-                <div class="p-name w3-border-top">Dove Cream</div>
-                <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
-            </div>
-        </div>
-        <div class="w3-border product" style="background-image: url(perfume.jpg);">
-            <span class="p-price">৳৯৫০</span>
-            <div class="p-footer">
-                <div class="p-name w3-border-top">Yacht Man Red Perfume</div>
-                <button class="w3-button w3-block w3-border-top w3-dark-grey">Buy</button>
-            </div>
-        </div>
-    </div>
+    <!-- Route View -->
+    <ng-view></ng-view>
     <div class="w3-bar w3-light-grey w3-border bottom-fix" style="display: flex;">
         <a href="#" class="w3-bar-item w3-button">
             <i class="fa fa-comment" style="font-size:30px"></i>
@@ -183,47 +75,9 @@
             <i class="fa fa-cart-plus" style="font-size:30px"></i>
         </a>
     </div>
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-        setInterval(function () { showDivs(++slideIndex) }, 3000);
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            if (n > x.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = x.length }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-white", "");
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " w3-white";
-        }
-        //Category Navigation
-        function $js(id) {
-            return document.getElementById(id);
-        }
-        $js("catBtn").addEventListener('click', function () {
-            var cList = $js("catUl").className.split(' ');
-            if (cList.indexOf("cat-nav-show") == -1) {
-                $js("catUl").classList.add("class", "cat-nav-show");
-            }
-            else {
-                $js("catUl").classList.remove("class", "cat-nav-show");
-            }
-        });
-    </script>
+    <script src="main.js"></script>
+    <script src="app.js"></script>
+    <script src="catpages/electronics.js"></script>
 
 </body>
 
