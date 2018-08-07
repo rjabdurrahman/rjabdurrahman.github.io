@@ -1,3 +1,14 @@
+jQuery(document).ready(function () {
+
+    var subMenu = jQuery("ul#catUl li ul li");
+    var linkClick = jQuery("ul#catUl li").filter(":has(ul)");
+
+    subMenu.hide();
+
+    linkClick.click(function () {
+        $(this).find('ul li').slideToggle("fast, 100");
+    });
+});
 var slideIndex = 1;
 showDivs(slideIndex);
 

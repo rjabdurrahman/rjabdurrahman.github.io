@@ -85,11 +85,11 @@ a{
     transition: 0.3s;
 }
 
-ul.w3-ul li ul,
+/* ul.w3-ul li ul,
 ul.w3-ul li:hover ul {
     display: none;
 }
 
 ul.w3-ul li:hover ul {
     display: block;
-}
+} */
