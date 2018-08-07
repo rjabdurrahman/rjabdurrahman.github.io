@@ -1,7 +1,7 @@
+<div class="w3-container w3-block w3-border-bottom w3-light-grey w3-border-green ng-scope">
+    <p>{{cat}}</p>
+</div>
 <div class="product-container">
-    <div class="w3-container w3-block w3-light-grey" style="margin-bottom: 18px;">
-        <span style="font-size: 25px;vertical-align: middle;">{{cat}}</span>
-    </div>
     <div ng-repeat="product in products track by $index" class="w3-border product" style="background-image: url(img/spray.jpg);">
         <span class="p-price">৳{{product.price}}</span>
         <div class="p-footer">
