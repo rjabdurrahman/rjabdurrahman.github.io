@@ -44,13 +44,7 @@ function showDivs(n) {
     x[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " w3-white";
 }
-//Category Navigation
-// $js("catBtn").addEventListener('click', function () {
-//     var cList = $js("catUl").className.split(' ');
-//     if (cList.indexOf("cat-nav-show") == -1) {
-//         $js("catUl").classList.add("class", "cat-nav-show");
-//     }
-//     else {
-//         $js("catUl").classList.remove("class", "cat-nav-show");
-//     }
-// });
+// Image Url
+function imgUrl(name){
+    return 'http://imgesite.com' + name;
+}

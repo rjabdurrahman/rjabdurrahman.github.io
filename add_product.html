@@ -23,12 +23,17 @@
         <textarea class="w3-input w3-border" name="features"></textarea>
     </p>
     <p>
+        <label>Image Url</label>
+        <input class="w3-input w3-border" name="img" type="text">
+    </p>
+    <p>
         <button onclick="addProduct(event)" class="w3-btn w3-blue">Add</button>
     </p>
 </form>
 <script>
     function addProduct(e) {
         let product = new Object();
+        product['id'] = 'f_121';
         $("form input, form textarea").each(function () {
             product[this.name] = this.value;
         });
