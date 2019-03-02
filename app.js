@@ -7,6 +7,10 @@ app.config(function($routeProvider) {
     templateUrl : 'catpages/product.html',
     controller  : 'HomeCntlr'
   })
+  .when('/login', {
+    templateUrl : 'login.html',
+    controller  : 'LoginCntlr'
+  })
   .when('/electronics', {
     templateUrl : 'catpages/product.html',
     controller  : 'ElectronicsCntlr'
