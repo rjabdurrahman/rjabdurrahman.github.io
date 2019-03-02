@@ -18,6 +18,9 @@ app.config(function($routeProvider) {
 
   .otherwise({redirectTo: '/'});
 });
+app.run(function($rootScope) {
+  $rootScope.cat = 'Main';
+});
 app.controller('HomeCntlr', function($scope){
     $scope.cat = 'Main';
     $scope.products = [
@@ -39,6 +42,6 @@ app.controller('HomeCntlr', function($scope){
         }
     ];
 });
-app.run(function($rootScope) {
-  $rootScope.cat = 'Main';
-})
+app.controller('LoginCntlr', function($scope){
+  $scope.title = 'Login';
+});
