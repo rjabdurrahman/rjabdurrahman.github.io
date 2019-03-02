@@ -1,28 +1,37 @@
 <div class="w3-container w3-block w3-border-bottom w3-light-grey w3-border-green ng-scope">
     <p class="category-name">{{title}}</p>
 </div>
-<form class="w3-container" action="/action_page.php">
+<form class="w3-container" style="margin-bottom: 40px;">
     <p>
         <label>Name</label>
-        <input class="w3-input w3-border" name="first" type="text">
+        <input class="w3-input w3-border" name="name" type="text">
     </p>
     <p>
         <label>Price</label>
-        <input class="w3-input w3-border w3-right-align" name="last" type="number">
+        <input class="w3-input w3-border w3-right-align" name="price" type="number">
     </p>
     <p>
         <label>Discount</label>
-        <input class="w3-input w3-border w3-right-align" name="last" type="number">
+        <input class="w3-input w3-border w3-right-align" name="disount" type="number">
     </p>
     <p>
         <label>Minimum Order (TK)</label>
-        <input class="w3-input w3-border" name="first" type="text">
+        <input class="w3-input w3-border" name="minOrder" type="text">
     </p>
     <p>
         <label>Features</label>
-        <textarea class="w3-input w3-border" name="last"></textarea>
+        <textarea class="w3-input w3-border" name="features"></textarea>
     </p>
     <p>
-        <button class="w3-btn w3-blue">Add</button>
+        <button onclick="addProduct(event)" class="w3-btn w3-blue">Add</button>
     </p>
 </form>
+<script>
+    function addProduct(e) {
+        let product = new Object();
+        $("form input, form textarea").each(function () {
+            product[this.name] = this.value;
+        });
+        console.log(product);
+    }
+</script>
