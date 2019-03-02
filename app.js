@@ -11,6 +11,10 @@ app.config(function($routeProvider) {
     templateUrl : 'login.html',
     controller  : 'LoginCntlr'
   })
+  .when('/addproduct', {
+    templateUrl : 'add_product.html',
+    controller  : 'AddProductCntlr'
+  })
   .when('/electronics', {
     templateUrl : 'catpages/product.html',
     controller  : 'ElectronicsCntlr'
@@ -44,4 +48,7 @@ app.controller('HomeCntlr', function($scope){
 });
 app.controller('LoginCntlr', function($scope){
   $scope.title = 'Login';
+});
+app.controller('AddProductCntlr', function($scope){
+  $scope.title = 'Add Product';
 });
