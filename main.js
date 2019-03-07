@@ -48,3 +48,5 @@ function showDivs(n) {
 function imgUrl(name){
     return 'http://imgesite.com' + name;
 }
+// Firebase
+const db = firebase.database();
