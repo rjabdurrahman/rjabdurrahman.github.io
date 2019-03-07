@@ -16,7 +16,7 @@
     </p>
     <p>
         <label>Discount</label>
-        <input class="w3-input w3-border w3-right-align" name="disount" type="number">
+        <input class="w3-input w3-border w3-right-align" name="discount" type="number">
     </p>
     <p>
         <label>Minimum Order (TK)</label>
@@ -35,12 +35,22 @@
     </p>
 </form>
 <script>
+    const db = firebase.database();
     function addProduct(e) {
         let product = new Object();
         product['id'] = 'f_121';
         $("form input, form textarea").each(function () {
             product[this.name] = this.value;
         });
-        console.log(product);
+        product['price'] = parseFloat(product['price']);
+        product['discount'] = parseFloat(product['discount']);
+        product['minOrder'] = parseFloat(product['minOrder']);
+        db.ref('products/food').push(product)
+        .then(function(sucess){
+            alert('Added Sucessfully!');
+        })
+        .catch(function(err){
+            alert(err);
+        });
     }
 </script>
