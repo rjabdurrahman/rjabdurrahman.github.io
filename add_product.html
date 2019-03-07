@@ -46,11 +46,14 @@
         product['discount'] = parseFloat(product['discount']);
         product['minOrder'] = parseFloat(product['minOrder']);
         db.ref('products/food').push(product)
-        .then(function(sucess){
-            alert('Added Sucessfully!');
-        })
-        .catch(function(err){
-            alert(err);
-        });
+            .then(function (sucess) {
+                alert('Added Sucessfully!');
+                $("form input, form textarea").each(function () {
+                    $(this).val('');
+                });
+            })
+            .catch(function (err) {
+                alert(err);
+            });
     }
 </script>
