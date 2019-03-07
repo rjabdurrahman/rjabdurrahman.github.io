@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute', 'firebase']);
 
 app.config(function($routeProvider) {
   $routeProvider
@@ -25,26 +25,10 @@ app.config(function($routeProvider) {
 app.run(function($rootScope) {
   $rootScope.cat = 'Main';
 });
-app.controller('HomeCntlr', function($scope){
+app.controller('HomeCntlr', function($scope, $firebaseArray){
     $scope.cat = 'Main';
-    $scope.products = [
-        {
-            name: "Main 1",
-            price: 45
-        },
-        {
-            name: "Main 2",
-            price: 80
-        },
-        {
-            name: "Main 3",
-            price: 90
-        },
-        {
-            name: "Main 4",
-            price: 20
-        }
-    ];
+    let db = firebase.database();
+    $scope.products = $firebaseArray(db.ref('products/food'));
 });
 app.controller('LoginCntlr', function($scope){
   $scope.title = 'Login';
